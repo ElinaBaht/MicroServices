@@ -53,12 +53,12 @@ namespace Front.Web.Services
 
                 return apiResponseDto;
             }
-            catch(Exception ex)
+            catch(Exception e)
             {
                 var dto = new ResponseDto
                 {
                     DisplayMessage = "Error",
-                    ErrorMessages = new List<string> { Convert.ToString(ex.Message) },
+                    ErrorMessages = new List<string> { Convert.ToString(e.Message) },
                     IsSuccess = false
                 };
                 var res = JsonConvert.SerializeObject(dto);

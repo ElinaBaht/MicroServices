@@ -32,7 +32,7 @@ namespace Front.Web.Services
             });
         }
 
-        public async Task<T> GetAllProductByIdAsync<T>(int id)
+        public async Task<T> GetProductByIdAsync<T>(int id)
         {
             return await this.SendAsync<T>(new ApiRequest()
             {

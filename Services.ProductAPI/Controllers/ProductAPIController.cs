@@ -59,8 +59,8 @@ namespace Services.ProductAPI.Controllers
         {
             try
             {
-                ProductDto modal = await _productRepository.CreateUpdateProduct(productDto);
-                _response.Result = modal;
+                ProductDto model = await _productRepository.CreateUpdateProduct(productDto);
+                _response.Result = model;
             }
             catch (Exception ex)
             {
@@ -78,8 +78,8 @@ namespace Services.ProductAPI.Controllers
         {
             try
             {
-                ProductDto modal = await _productRepository.CreateUpdateProduct(productDto);
-                _response.Result = modal;
+                ProductDto model = await _productRepository.CreateUpdateProduct(productDto);
+                _response.Result = model;
             }
             catch (Exception ex)
             {
@@ -91,7 +91,7 @@ namespace Services.ProductAPI.Controllers
             return _response;
         }
         [HttpDelete]
-
+        [Route("{id}")]
         public async Task<object> Delete(int id)
         {
             try
