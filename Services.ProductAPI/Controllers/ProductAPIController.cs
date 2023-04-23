@@ -57,7 +57,7 @@ namespace Services.ProductAPI.Controllers
         {
             try
             {
-                ProductDto model = await _repository.CreateUpdateProduct(productDto;
+                ProductDto model = await _repository.CreateUpdateProduct(productDto);
                 _response.Result = model;
             }
             catch (Exception ex)
