@@ -1,0 +1,42 @@
+﻿@page "/products"
+
+<PageTitle>Products</PageTitle>
+
+<h1>Welcome to my shop</h1>
+
+<a href="@($"ProductDetails")" class="btn btn-success">Add New Product</a>
+
+<table class="table">
+	<thead>
+		<tr>
+			<th>
+				Name
+			</th>
+			<th>
+				Price
+			</th>
+			<th>
+				Description
+			</th>
+			<th>
+				CategoryName
+			</th>
+			<th>
+				Manage
+			</th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var item in list)
+		{
+			<tr>
+				<td>@item.Name</td>
+				<td>@item.Price</td>
+				<td>@item.Description</td>
+				<td>@item.CategoryName</td>
+				<td></td>
+			</tr>
+		}
+
+	</tbody>
+</table>

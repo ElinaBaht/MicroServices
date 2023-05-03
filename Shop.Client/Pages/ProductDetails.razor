@@ -1,0 +1,46 @@
+﻿@page "/productdetails"
+@page "/productdetails/{id}"
+
+@if(string.IsNullOrEmpty(Id))
+{
+	<PageTitle>Add New Product</PageTitle>
+	<h1>Add New Product</h1>
+}
+else
+{
+	<PageTitle>Update Product</PageTitle>
+	<h1>Update Product</h1>
+}
+
+<div class="row">
+	<EditForm Model="@product" OnValidSubmit="@HandleValidRequest" OnInvalidSubmit="@HandleFailedRequest">
+		<div class="form-group">
+			<label class="col-md-3">Name</label>
+			<InputText class="col-md-8 form-control" @bind-Value="@product.Name"></InputText>
+		</div>
+		<div class="form-group">
+			<label class="col-md-3">Price</label>
+			<InputText class="col-md-8 form-control" Value="@string.Format("{0:C}", product.Price)"></InputText>
+		</div>
+		<div class="form-group">
+			<label class="col-md-3">Name</label>
+			<InputText class="col-md-8 form-control" @bind-Value="@product.Description"></InputText>
+		</div>
+		<div class="form-group">
+			<label class="col-md-3">Name</label>
+			<InputText class="col-md-8 form-control" @bind-Value="@product.CategoryName"></InputText>
+		</div>
+
+		<br />
+		<div class="form-group">
+			<button type="submit" class="btn btn-warning">Save Product</button>
+			<a @onclick="@GoToProducts" class="btn btn-primary">Back</a>
+			<br/>
+			@if(!string.IsNullOrEmpty(Id))
+			{
+				<a @onclick="@DeleteProduct" class="btn btn-danger">Delete Product</a>
+			}
+		</div>
+
+	</EditForm>
+</div>
